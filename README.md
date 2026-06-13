@@ -16,6 +16,11 @@
 We release **Qwen3-TTS**, a series of powerful speech generation capabilities developed by Qwen, offering comprehensive support for voice clone, voice design, ultra-high-quality human-like speech generation, and natural language-based voice control. It provides developers and users with the most extensive set of speech generation features available.
 
 
+> **Phenom-earth fork.** This fork adds an OpenAI-compatible HTTP server
+> (`server/qwen_tts_server.py`) so PAI and every Code Server can share one voice
+> instance. To stand it up on the Mac Studio, see **[`docs/SERVER_SETUP.md`](docs/SERVER_SETUP.md)**
+> and run `./scripts/setup-macstudio.sh`.
+
 ## News
 * 2026.1.22: 🎉🎉🎉 We have released [Qwen3-TTS](https://huggingface.co/collections/Qwen/qwen3-tts) series (0.6B/1.7B) based on Qwen3-TTS-Tokenizer-12Hz. Please check our [blog](https://qwen.ai/blog?id=qwen3tts-0115)!
 

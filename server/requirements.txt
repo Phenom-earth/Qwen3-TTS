@@ -1,0 +1,7 @@
+# HTTP server deps for the Phenom-earth OpenAI-compatible Qwen3-TTS server.
+# The model/runtime deps (torch, transformers, etc.) come from the qwen_tts
+# package itself (pyproject.toml): install that first: `pip install -e .`
+fastapi>=0.115
+uvicorn[standard]>=0.30
+soundfile>=0.12
+numpy>=1.24
