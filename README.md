@@ -20,6 +20,17 @@ We release **Qwen3-TTS**, a series of powerful speech generation capabilities de
 > (`server/qwen_tts_server.py`) so PAI and every Code Server can share one voice
 > instance. To stand it up on the Mac Studio, see **[`docs/SERVER_SETUP.md`](docs/SERVER_SETUP.md)**
 > and run `./scripts/setup-macstudio.sh`.
+>
+> **Dev-environment file-ref voice cloning.** The Phenom dev-environment access layer
+> (`Phenom-earth/sablier-weblogon`) needs per-developer **cloned** voices, not the model's
+> built-in timbres. That contract (`GET /v1/voices` list, `POST /v1/voices/reload`,
+> `POST /v1/voices/{id}/reclone`, `<id>_ref.wav` scanning) is served by the **file-ref
+> cloning server** (`tts_server.py` + `backends/`), brought in unchanged from the proven
+> SanMarcSoft reference deploy. Stand it up with `./scripts/setup-cloning-macstudio.sh`
+> then `./scripts/run-cloning-server.sh --install-launchd`. The model defaults to the
+> higher-quality `mlx-community/Qwen3-TTS-12Hz-1.7B-Base-bf16` (the Mac Studio has the
+> headroom; use `0.6B-Base-4bit` on constrained hosts). See
+> **[`docs/CLONING-SERVER.md`](docs/CLONING-SERVER.md)**.
 
 ## News
 * 2026.1.22: 🎉🎉🎉 We have released [Qwen3-TTS](https://huggingface.co/collections/Qwen/qwen3-tts) series (0.6B/1.7B) based on Qwen3-TTS-Tokenizer-12Hz. Please check our [blog](https://qwen.ai/blog?id=qwen3tts-0115)!
